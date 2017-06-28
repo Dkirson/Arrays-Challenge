@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    var currentStudent = ""
+    
     @IBOutlet weak var myTableView: UITableView!
 
     @IBOutlet weak var stretch2Label: UILabel!
@@ -44,17 +46,23 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         * End Your Code Here For MVP - Part 2
         ***************************************************/
        
-        return ("numberOfMovies")
+        return numberOfMovies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let currentCell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        let index = (indexPath as NSIndexPath).row
+        var index = (indexPath as NSIndexPath).row
         /***************************************************
         * Start Your Code Here For MVP - Part 3
         ***************************************************/
-
+      var myFavoriteMoives = Int()
+        var currentStudent = String()
+         var myTableView = Bool()
+        
+      
+        
+        
         
         
         
