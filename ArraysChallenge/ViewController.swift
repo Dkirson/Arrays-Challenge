@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         * End Your Code Here For MVP - Part 2
         ***************************************************/
        
-        return numberOfMovies
+        return ("numberOfMovies")
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
