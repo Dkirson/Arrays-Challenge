@@ -9,9 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
-
-    var currentStudent = ""
     
+   
     @IBOutlet weak var myTableView: UITableView!
 
     @IBOutlet weak var stretch2Label: UILabel!
@@ -19,7 +18,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     * Start Your Code Here For MVP - Part 1
     ***************************************************/
     var myFavoriteMovies = ["Home Alone", "Deadpool", "Spider-Man", "Sponge Out Of Water"]
-    
     
 
     /***************************************************
@@ -35,9 +33,10 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         /***************************************************
         * Start Your Code Here For MVP - Part 2
         ***************************************************/
-       var numberOfMovies = ["Home Alone", "Deadpool", "Spider-Man", "Sponge Out Of Water"]
-        
-       numberOfMovies.count
+         var numberOfMovies = 0
+        numberOfMovies = myFavoriteMovies.count
+       return myFavoriteMovies.count
+        print(numberOfMovies)
         
         
         
@@ -45,20 +44,22 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         /***************************************************
         * End Your Code Here For MVP - Part 2
         ***************************************************/
-       
-        return numberOfMovies.count
+    
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let currentCell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        var index = (indexPath as NSIndexPath).row
+        let index = (indexPath as NSIndexPath).row
         /***************************************************
         * Start Your Code Here For MVP - Part 3
         ***************************************************/
-      var myFavoriteMoives = Int()
-        var currentStudent = String()
          var myTableView = Bool()
+//        stretch2Label.text = myFavoriteMovies
+
+        var currentStudent = myFavoriteMovies[index]
+
+        
         
       
         
@@ -70,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         /***************************************************
         * End Your Code Here For MVP - Part 3
         ***************************************************/
-
+            
         currentCell.textLabel?.text = currentStudent
         return currentCell
 
@@ -80,7 +81,9 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         /***************************************************
         * Start Your Code Here For Stretch #1
         ***************************************************/
-
+        myFavoriteMovies[1] = "Wonder Woman"
+        myFavoriteMovies.append("Batman vs. Superman")
+        myFavoriteMovies.insert("X-files", at: 2)
         /***************************************************
         * End Your Code Here For Stretch #1
         ***************************************************/
@@ -91,13 +94,15 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         /***************************************************
         * Start Your Code Here For Stretch #2
         ***************************************************/
-
+        myFavoriteMovies.remove(at: 0)
+        myFavoriteMovies.remove(at: 1)
+        let myAllTimeFavorite = myFavoriteMovies[1]
         /***************************************************
         * End Your Code Here For Stretch #2
         ***************************************************/
         myTableView.reloadData()
         //Uncomment the line below for Stretch #2
-        //stretch2Label.text = myAllTimeFavorite
+        stretch2Label.text = myAllTimeFavorite
     }
 }
 
